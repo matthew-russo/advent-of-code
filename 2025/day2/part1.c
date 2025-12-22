@@ -41,8 +41,8 @@
 // 
 // What do you get if you add up all of the invalid IDs?
 
-bool is_invalid(long long number) {
-    char buf[200];
+bool is_invalid(uint64_t number) {
+    char buf[20];
     sprintf(buf, "%lld", number);
     size_t len = strlen(buf);
 
@@ -81,7 +81,7 @@ int main() {
     }
     buf[amount_read + 1] = '\0';
 
-    long long invalid_sum = 0;
+    uint64_t invalid_sum = 0;
 
     char *start_str = strtok(buf, "-");
     while (start_str != NULL) {
@@ -89,10 +89,10 @@ int main() {
 
         printf("Range: '%s' - '%s'\n", start_str, end_str);
 
-        long long start = atoll(start_str);
-        long long end = atoll(end_str);
+        uint64_t start = atoll(start_str);
+        uint64_t end = atoll(end_str);
 
-        for (long long i = start; i <= end; i++) {
+        for (uint64_t i = start; i <= end; i++) {
             if (is_invalid(i)) {
                 printf("  Invalid ID found: %lld\n", i);
                 invalid_sum += i;
