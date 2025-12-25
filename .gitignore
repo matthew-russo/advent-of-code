@@ -1,7 +1,17 @@
+# zig build artifacts
 **/.zig-cache
 **/zig-out
+
+# generic build artifacts
 **/build
-.vscode
+
+# input files
 **/input*.txt
 **/sample*.txt
 **/test*.txt
+**/day*.txt
+
+# ocaml build artifacts
+**/_build
+
+.vscode
