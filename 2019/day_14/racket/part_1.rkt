@@ -1,10 +1,5 @@
 #lang racket
 
-;; right side of equation is the hash node
-;; left side is the list of values
-;; build a graph and traverse from FUEL back to ORE,
-;; each step will require multiplying by the number needed and dividing by the number produced
-
 (struct node (id num requires)) ;; requires is a list of nodes
 
 (define (node->string n)
